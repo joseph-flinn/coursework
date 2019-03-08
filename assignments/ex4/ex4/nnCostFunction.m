@@ -62,12 +62,14 @@ Theta2_grad = zeros(size(Theta2));
 %               and Theta2_grad from Part 2.
 %
 X = [ones(m, 1) X];
+I = eye(max(y));
+y = I(y, :)
 
-h_x = sigmoid(Theta2 * [ones(1, m) ; sigmoid(Theta1 * X')])
-
+h_x = sigmoid(Theta2 * [ones(1, m) ; sigmoid(Theta1 * X')]);
 
 %a_2 = [ones(1, m) ; sigmoid(Theta1 * X')];
 
+J = sum((-y * log(h_x)) - ((1 - y) * log(h_x + 1))) / m;
 
 
 
