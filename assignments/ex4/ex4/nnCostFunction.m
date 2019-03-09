@@ -69,7 +69,7 @@ h_x = sigmoid(Theta2 * [ones(1, m) ; sigmoid(Theta1 * X')]);
 
 %a_2 = [ones(1, m) ; sigmoid(Theta1 * X')];
 
-J = sum(sum((-y' .* log(h_x)) - ((1 - y)' .* log(h_x + 1)))) / m;
+J = sum(sum((-y' .* log(h_x)) - ((1 - y)' .* log(1 - h_x)))) / m;
 
 
 
