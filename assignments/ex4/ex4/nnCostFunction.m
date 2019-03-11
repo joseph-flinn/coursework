@@ -71,9 +71,28 @@ h_x = sigmoid(Theta2 * [ones(1, m) ; sigmoid(Theta1 * X')]);
 
 J = sum(sum((-y' .* log(h_x)) - ((1 - y)' .* log(1 - h_x)))) / m;
 
+regularized_var = (lambda / (2 * m)) * (sum(sum(Theta1(:, 2:end) .^2, 2)) + sum(sum(Theta2(:, 2:end) .^2, 2)));
+
+J = J + regularized_var;
 
 
 
+for t = 1:m;
+    a_1 = X(t, :)';             % bias unit added above when increasing size of X
+    z_2 = Theta1 * a_1;
+    a_2 = [1 ; sigmoid(z_2)];
+    z_3 = Theta2 * a_2;
+    a_3 = sigmoid(z_3);
+
+    del_3 = a_3 - y(t, :)';
+    del_2 = [(Theta2' * del_3)(2:end) .* sigmoidGradient(z_2)];
+
+    Theta1_grad = (Theta1_grad + (del_2 * a_1'));
+    Theta2_grad = (Theta2_grad + (del_3 * a_2'));
+end;    
+
+Theta1_grad = (Theta1_grad + [zeros(hidden_layer_size, 1) [lambda * Theta1](:, 2:end)]) / m;
+Theta2_grad = (Theta2_grad + [zeros(num_labels, 1) [lambda * Theta2](:, 2:end)]) / m;
 % -------------------------------------------------------------
 
 % =========================================================================
