@@ -4,6 +4,9 @@ This is the repository where I keep all of the work that I have done while
 taking online courses. They are organized by the course provider. 
 
 ### Coursera
+
+---
+
 ###### Machine Learning by Andrew Ng
 
 A machine learning course devoted to understanding the mathematics and the 
@@ -22,6 +25,9 @@ implementation of the algorithms than the people who have PhDs. But that's just
 my two cents.
 
 ### Udemy
+
+---
+
 ###### WIP: Machine Learning A-Z
 
 A more hands-on/practical course than Dr. Ng's ML course. However, all of this
