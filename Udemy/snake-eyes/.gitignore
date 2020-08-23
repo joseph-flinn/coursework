@@ -1,0 +1,11 @@
+# App System
+.env
+instance/settings.py
+
+# Python
+*.pyc
+__pycache___/
+
+# Tools
+.coverage
+SnakeEyes_CLI.egg-info/

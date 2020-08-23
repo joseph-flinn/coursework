@@ -1,0 +1,5 @@
+{{ email }}
+Overall Experience: {{ overall_experience }}
+Playing Experience: {{ playing_experience }}
+Account Experience: {{ account_experience }}
+Concerns: {{ concerns }}

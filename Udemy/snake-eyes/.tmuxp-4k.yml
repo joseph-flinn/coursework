@@ -1,0 +1,25 @@
+session_name: 4k
+start_directory: "${PWD}"
+global_options:
+  pane-active-border-style: "fg=red"
+  window-status-current-style: "bg=red"
+windows:
+  - window_name: bash
+    layout: 3691,172x84,0,0[172x8,0,0,1,172x15,0,9,2,172x59,0,25{84x59,0,25,3,87x59,85,25,5}]
+    focus: 'true'
+    options:
+      automatic-rename: 'off'
+    panes:
+      - htop
+      - watch docker ps -a
+      - focus: 'true'
+      -
+  - window_name: vim
+    layout: 847f,172x84,0,0[172x12,0,0,6,172x71,0,13{86x71,0,13[86x50,0,13,7,86x20,0,64,10],85x71,87,13[85x50,87,13,8,85x20,87,64,9]}]
+    options: {}
+    panes:
+      - watch docker ps -a
+      - 
+      - 
+      - focus: 'true'
+      - 

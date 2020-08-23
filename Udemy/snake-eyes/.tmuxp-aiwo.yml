@@ -1,0 +1,22 @@
+session_name: 'flask_saas aiwo'
+start_directory: /home/joseph/coursework/Udemy/Flask_SaaS
+global_options:
+  pane-active-border-style: 'fg=red'
+  window-status-current-style: 'bg=red'
+windows:
+  - window_name: bash
+    layout: c3aa,105x55,0,0[105x7,0,0,0,105x13,0,8,1,105x33,0,22{52x33,0,22,2,52x33,53,22,3}]
+    focus: 'true'
+    options: {}
+    panes:
+      - htop
+      - watch -x docker ps -a --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}"
+      - 
+      - focus: 'true'
+  - window_name: bash
+    layout: 775f,105x55,0,0[105x12,0,0,4,105x30,0,13,5,105x11,0,44,6]
+    options: {}
+    panes:
+    - watch -x docker ps -a --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}"
+    - focus: 'true'
+    - 

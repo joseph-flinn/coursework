@@ -1,0 +1,36 @@
+{% extends 'layouts/app.html' %}
+{% import 'macros/form.html' as f with context %}
+
+{% block title %}Please leave your feedback of your experience{% endblock %}
+{% block meta_description %}Contact our customer service department with your 
+feedback. Please direct questions or concerns to our Contact page for faster 
+response.{% endblock %}
+
+{% block body %}
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 well">
+      {% call f.form_tag('feedback.index') %}
+        <legend>Feedback</legend>
+        
+        {% call f.form_group(form.email, css_class='margin-bottom',
+                             placeholder='E-mail address') %}
+        {% endcall %}
+
+        {% call f.form_group(form.overall_experience, css_class='margin-bottom') %}
+        {% endcall %}
+
+        {% call f.form_group(form.playing_experience, css_class='margin-bottom') %}
+        {% endcall %}
+
+        {% call f.form_group(form.account_experience, css_class='margin-bottom') %}
+        {% endcall %}
+
+        {% call f.form_group(form.concerns, css_class='margin-bottom',
+                             placeholder='Any concerns?', rows='6') %}
+        {% endcall %}
+        
+        <button type="submit" class="btn btn-primary">Send Feedback</button>
+      {% endcall %}
+    </div>
+  </div>
+{% endblock %}

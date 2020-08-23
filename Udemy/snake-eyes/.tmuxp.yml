@@ -1,0 +1,16 @@
+session_name: Flask_SaaS
+start_directory: "${PWD}"
+global_options:
+  pane-active-border-style: "fg=red"
+  window-status-current-style: "bg=red"
+windows:
+  - window_name: bash
+    layout: 4472,172x84,0,0[172x8,0,0,0,172x15,0,9,1,172x59,0,25{74x59,0,25[74x29,0,25,2,74x29,0,55,5],97x59,75,25,4}]
+    focus: 'true'
+    options: {}
+    panes:
+      - htop
+      - watch docker ps -a
+      - focus: 'true'
+      - 
+      - 
